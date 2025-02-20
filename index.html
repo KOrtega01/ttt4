@@ -6,17 +6,18 @@
     <style>
         /* Centering the body */
         body {
-            justify-content: center;
+            display: flex;
+            align-items: center;
             flex-direction: column;
             height: 100vh; 
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4;            
         }
         h1 {
             color: #FF0000;
             margin-bottom: 20px;
         }
-        /* Styling for the sections (turn info and win condition) */
+        /* Style for the sections (turn info and win condition) */
         .turn-info, .win-info {
             margin-bottom: 20px;
             padding: 10px;
@@ -29,12 +30,12 @@
         /* Grid div that holds the squares */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 100px); /* Create 3 columns of 100px */
-            grid-template-rows: repeat(3, 100px);    /* Create 3 rows of 100px */
-            gap: 5px;                                /* Adds space between squares */
-            justify-items: center;                   /* Center items horizontally */
-            align-items: center;                     /* Center items vertically */
-            margin-top: 20px;                        /* Adds space above the grid */
+            grid-template-columns: repeat(3, 100px); 
+            grid-template-rows: repeat(3, 100px);    
+            gap: 5px;                                
+            justify-items: center;                   
+            align-items: center;                     
+            margin-top: 20px;                        
         }
 
         /* Style for each square */
@@ -83,12 +84,12 @@
                 square.id = "sq" + i;
                 gridContainer.appendChild(square);
 
-                // click event listener to each square
+                // click event listener 
                 square.addEventListener('click', function () {
                     // Check if square is already filled, if not, place the new player's mark
                     if (square.innerText === "") {
                         square.innerText = currentPlayer;
-                        turnInfoDiv.innerText = `${currentPlayer === "X" ? "O" : "X"}'s Turn`; // Update to the next player's turn
+                        turnInfoDiv.innerText = `${currentPlayer === "X" ? "O" : "X"}'s Turn`; // Update to the next player
 
                         // Switch to the next player
                         currentPlayer = (currentPlayer === "X") ? "O" : "X";
